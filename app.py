@@ -196,7 +196,7 @@ elif page == "About":
     Your resume data is processed locally and stored only for your session. We do not share your personal information with third parties.
     
     ### Contact:
-    For support or feedback, please contact: @gcgamers
+    For support or feedback, please contact: @garvity
     """)
 
     # Footer
