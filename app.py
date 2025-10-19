@@ -17,7 +17,7 @@ page = st.sidebar.radio("Select Page", ["Resume Details", "Resume Matching", "Ch
 
 def call_backend(endpoint, file, data):
     files = {"file": (file.name, file.getvalue(), "application/pdf")}
-    response = requests.post(f"http://localhost:8000/{endpoint}", files=files, data=data)
+    response = requests.post(f"https://resume-analysis-app-rag-pipeline.onrender.com/{endpoint}", files=files, data=data)
     if response.status_code == 200:
         return response.json()
     else:
