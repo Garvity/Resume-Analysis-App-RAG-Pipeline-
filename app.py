@@ -7,7 +7,11 @@ import os
 st.sidebar.title("🔑 API Configuration")
 api_key_input = st.sidebar.text_input("Enter your Hugging Face API Key (optional)", type="password")
 # Fallback to environment token if not provided via sidebar
-api_key = api_key_input or os.getenv("HF_TOKEN")
+if api_key_input:
+    # Store temporarily in environment variables
+    os.environ["HF_TOKEN"] = api_key_input
+    st.success("API key is set for this session!")
+api_key = os.getenv("HF_TOKEN")
 
 page = st.sidebar.radio("Select Page", ["Resume Details", "Resume Matching", "Chat with Resume and Job Description", "About"],index=0)
 
