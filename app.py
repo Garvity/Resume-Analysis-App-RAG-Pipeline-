@@ -5,7 +5,7 @@ import os
 
 # Sidebar for API key input
 st.sidebar.title("🔑 API Configuration")
-api_key_input = st.sidebar.text_input("Enter your Hugging Face API Key (optional)", type="password")
+api_key_input = st.sidebar.text_input("Enter your Hugging Face API Key", type="password")
 # Fallback to environment token if not provided via sidebar
 if api_key_input:
     # Store temporarily in environment variables
