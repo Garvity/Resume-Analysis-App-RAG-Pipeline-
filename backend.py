@@ -120,6 +120,9 @@ async def resume_details(file: UploadFile = File(...), api_key: str = Form(...))
     - Ensure the output is clean and easy to read.
     - If the resume is empty or unreadable, respond with "No content found in the resume."
     - The section headings should be in bold and big compared to the rest of the text.
+    - Display the name in capitalized format.
+    - Don't include any labels like "•" or "-".
+    - Don't display the project github links.
 
     Resume Text:
     {resume_text[:4000]}  # Slightly longer limit
@@ -227,6 +230,7 @@ async def chat_with_resume(
     return {"llm_feedback": feedback}
 
 if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 8000))
     uvicorn.run(app, host="0.0.0.0", port=port)
     
 # --- IGNORE ---
