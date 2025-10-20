@@ -1,4 +1,9 @@
 import os
+
+os.environ['HF_HUB_DISABLE_XET'] = '1'
+# Optionally disable transfer for extra safety (helps with resume/chunk issues)
+os.environ['HF_HUB_DISABLE_TRANSFER'] = '1'
+
 import re
 import numpy as np
 from PyPDF2 import PdfReader
@@ -29,7 +34,7 @@ splitter = RecursiveCharacterTextSplitter(
     chunk_size=500,
     chunk_overlap=50,
     length_function=len
-    )
+)
 
 # Load embeddings model and both vector stores once
 embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
