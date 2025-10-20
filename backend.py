@@ -229,6 +229,10 @@ async def chat_with_resume(
         return {"error": feedback}
     return {"llm_feedback": feedback}
 
+@app.get("/health")
+def health():
+    return {"status": "healthy", "timestamp": datetime.utcnow().isoformat()}
+    
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 8000))
     uvicorn.run(app, host="0.0.0.0", port=port)
