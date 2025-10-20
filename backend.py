@@ -5,13 +5,11 @@ from PyPDF2 import PdfReader
 from fastapi import FastAPI, File, UploadFile, Form
 from fastapi.middleware.cors import CORSMiddleware
 from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain.schema import Document
 from langchain_community.vectorstores import FAISS
 from langchain_huggingface import HuggingFaceEmbeddings
 from huggingface_hub import InferenceClient
-from transformers import pipeline
+from datetime import datetime
 import uvicorn
-import traceback
 from dotenv import load_dotenv
 load_dotenv()
 api_key = os.getenv("HF_TOKEN")
