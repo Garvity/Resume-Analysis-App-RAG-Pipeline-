@@ -4,6 +4,9 @@ Resume Analyzer Pro is a small AI-powered toolkit for analyzing PDF resumes, ext
 
 This repository contains a Streamlit frontend (`app.py`) and a FastAPI backend (`backend.py`) that communicates with Hugging Face inference APIs and local FAISS vector stores for semantic search.
 
+##Check out the deployed app in streamlit
+- https://resume-analysis-app123.streamlit.app/
+
 ## Features
 - Upload PDF resumes and extract sections (skills, education, experience, projects, contact info).
 - Semantic resume ↔ job-description matching with a numeric score and actionable feedback.
